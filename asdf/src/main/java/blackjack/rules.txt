@@ -1,0 +1,28 @@
+Make a Blackjack game!
+
+Players are you and a dealer (leave room for more players)
+Standard blackjack rules
+1 deck of cards (leave room for more)
+
+
+
+-- Deck
+    -- 4 suits
+    -- 13 cards / suit
+Rules
+    Definition of the rules
+        Closest to 21 w/o going over
+        Card values
+            Ace can be 1 or 11
+            #cards show their own value
+            Face cards are 10
+            Suits don't matter (yet)
+        Hit
+        Stand
+        Bust
+        Split
+        Bet
+        Double Down
+        Dealer
+        Player(s)
+        No Panda Bears
