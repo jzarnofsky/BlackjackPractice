@@ -9,6 +9,8 @@ public abstract class BasePlayer {
     private boolean busted;
     private boolean endedTurn;
     String name;
+
+
     
     private int handValue = 0;
     private int numberOfAces = 0;
