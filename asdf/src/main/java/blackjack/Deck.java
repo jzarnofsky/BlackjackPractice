@@ -53,7 +53,7 @@ public class Deck {
         }
     }
 
-    public class Card {
+    public static class Card {
         Suit suit;
         Face face;
 

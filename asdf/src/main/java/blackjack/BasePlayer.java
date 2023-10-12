@@ -1,5 +1,7 @@
 package blackjack;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,7 @@ public abstract class BasePlayer {
     private boolean busted;
     private boolean endedTurn;
     String name;
-    
+
     private int handValue = 0;
     private int numberOfAces = 0;
 
