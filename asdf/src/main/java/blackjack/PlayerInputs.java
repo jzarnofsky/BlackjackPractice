@@ -9,10 +9,15 @@ public class PlayerInputs {
     public static int takePlayerBet(Player bettingPlayer) {
         System.out.println(bettingPlayer.name + " should input a number for a bet now. Don't go broke.");
         int desiredBet = ensureInputIsNumber(getInputFromTerminal());
-        while (checkAgainstMinimumBet(desiredBet) || checkAgainstPlayerFunds(desiredBet, bettingPlayer)) {
-
+        int attempts = 0;
+        while (checkAgainstMinimumBet(desiredBet)
+                || checkAgainstPlayerFunds(desiredBet, bettingPlayer)) {
+            if (attempts > 2) {
+                System.out.println("I guess you're betting everything since you can't follow basic instructions.");
+                return bettingPlayer.getFunds();
+            }
             desiredBet = ensureInputIsNumber(getInputFromTerminal());
-            //TODO: Make it so player can't try forever
+            attempts++;
         }
         System.out.println(bettingPlayer.name + " has chosen to bet: " + desiredBet);
         return desiredBet;
@@ -61,6 +66,7 @@ public class PlayerInputs {
                 System.out.println("Making good choices, are we?");
                 return playerInput;
             } else {
+                getPlayerReBuyInElseLoopOccurred = true;
                 System.out.println("You need to have more than the minimum bet after buying in. Try again.");
             }
         }
@@ -104,5 +110,10 @@ public class PlayerInputs {
                 return 0;
             }
         }
+    }
+
+    static boolean getPlayerReBuyInElseLoopOccurred = false;
+    protected static boolean didGetPlayerReBuyInElseLoopOccur() {
+        return getPlayerReBuyInElseLoopOccurred;
     }
 }
